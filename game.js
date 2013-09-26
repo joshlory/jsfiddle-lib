@@ -34,7 +34,7 @@ function Sprite(element) {
         },
         right : {
             get : function() {
-                return parseFloat(ball.style.left) + element.offsetWidth || element.offsetWidth;
+                return parseFloat(element.style.left) + element.offsetWidth || element.offsetWidth;
             },
             set : function(value) {
                 element.style.left = value - element.offsetWidth + "px";
