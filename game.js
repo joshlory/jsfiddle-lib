@@ -6,38 +6,39 @@ window.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;  
 });
 
-var player = {};
-Object.defineProperties(player, {
-    top : {
-        get : function() {
-            return parseFloat(ball.style.top) || 0;
+function Sprite(element) {
+    Object.defineProperties(this, {
+        top : {
+            get : function() {
+                return parseFloat(element.style.top) || 0;
+            },
+            set : function(value) {
+                element.style.top = value + "px";
+            }
         },
-        set : function(value) {
-            ball.style.top = value + "px";
-        }
-    },
-    left : {
-        get : function() {
-            return parseFloat(ball.style.left) || 0;
+        left : {
+            get : function() {
+                return parseFloat(element.style.left) || 0;
+            },
+            set : function(value) {
+                element.style.left = value + "px";
+            }
         },
-        set : function(value) {
-            ball.style.left = value + "px";
-        }
-    },
-    bottom : {
-        get : function() {
-            return parseFloat(ball.style.top) + ball.offsetHeight || ball.offsetHeight;
+        bottom : {
+            get : function() {
+                return parseFloat(element.style.top) + element.offsetHeight || element.offsetHeight;
+            },
+            set : function(value) {
+                element.style.top = value - element.offsetHeight + "px";
+            }
         },
-        set : function(value) {
-            ball.style.top = value - ball.offsetHeight + "px";
+        right : {
+            get : function() {
+                return parseFloat(ball.style.left) + element.offsetWidth || element.offsetWidth;
+            },
+            set : function(value) {
+                element.style.left = value - element.offsetWidth + "px";
+            }
         }
-    },
-    right : {
-        get : function() {
-            return parseFloat(ball.style.left) + ball.offsetWidth || ball.offsetWidth;
-        },
-        set : function(value) {
-            ball.style.left = value - ball.offsetWidth + "px";
-        }
-    }
-});
+    });
+}
