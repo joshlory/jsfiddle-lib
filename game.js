@@ -25,3 +25,5 @@ Object.defineProperties(player, {
         }
     }
 });
+ball.style.top = "0px";
+ball.style.left = "0px";
