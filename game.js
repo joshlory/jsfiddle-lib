@@ -57,7 +57,6 @@ function createPlatform(x, y, width, height) {
 }
 
 (function () {
-    var game = document.querySelector("#game");
     function makeDiv(x, y, text) {
     
         var div = document.createElement("div");
@@ -66,7 +65,7 @@ function createPlatform(x, y, width, height) {
         div.style.left = x + "px";
         div.style.top = y + "px";
         div.style.font = "11px sans-serif";
-        game.appendChild(div);
+        document.body.appendChild(div);
     }
     makeDiv(5, 5, "0, 0");
     makeDiv(window.innerWidth - 140, 5, "window.innerWidth = " + window.innerWidth);
