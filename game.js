@@ -56,18 +56,22 @@ function createPlatform(x, y, width, height) {
     platforms.push(new Sprite(div));
 }
 
-window.addEventListener("load", function () {
-    function makeDiv(x, y, text) {
-    
-        var div = document.createElement("div");
-        div.innerHTML = text;
-        div.style.position = "absolute";
-        div.style.left = x + "px";
-        div.style.top = y + "px";
-        div.style.font = "11px sans-serif";
-        document.body.appendChild(div);
-    }
+function makeDiv(x, y, text) {
+    var div = document.createElement("div");
+    div.innerHTML = text;
+    div.style.position = "absolute";
+    div.style.left = x + "px";
+    div.style.top = y + "px";
+    div.style.font = "11px sans-serif";
+    div.className = "coordinates";
+    document.body.appendChild(div);
+}
+function displayCoords() {
+    var div;
+    while (div = document.querySelector(".coordinates")) div.parentNode.removeChild(div);
     makeDiv(5, 5, "0, 0");
     makeDiv(window.innerWidth - 140, 5, "window.innerWidth = " + window.innerWidth);
     makeDiv(5, window.innerHeight - 25, "window.innerHeight = " + window.innerHeight);
-});
+}
+window.addEventListener("load", displayCoords);
+window.addEventListener("resize", displayCoords);
