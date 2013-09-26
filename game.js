@@ -52,7 +52,7 @@ function createPlatform(x, y, width, height) {
     div.style.top = y + "px";
     div.style.width = (width || 100) + "px";
     div.style.height = (height || 10) + "px";
-    document.body.appendChild(div);
+    document.querySelector("#game").appendChild(div);
     platforms.push(new Sprite(div));
 }
 
