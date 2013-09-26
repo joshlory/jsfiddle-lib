@@ -10,7 +10,7 @@ var player = {};
 Object.defineProperties(player, {
     top : {
         get : function() {
-            return parseFloat(ball.style.top);
+            return parseFloat(ball.style.top) || 0;
         },
         set : function(value) {
             ball.style.top = value + "px";
@@ -18,7 +18,7 @@ Object.defineProperties(player, {
     },
     left : {
         get : function() {
-            return parseFloat(ball.style.left);
+            return parseFloat(ball.style.left) || 0;
         },
         set : function(value) {
             ball.style.left = value + "px";
