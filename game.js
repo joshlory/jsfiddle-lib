@@ -48,10 +48,10 @@ var platforms = [];
 function createPlatform(x, y, width, height) {
     var div = document.createElement("div");
     div.className = "platform";
+    div.style.left = x + "px";
+    div.style.top = y + "px";
+    div.style.width = width + "px";
+    div.style.height = height + "px";
     document.body.appendChild(div);
-    div.style.left = x;
-    div.style.top = y;
-    div.style.width = width;
-    div.style.height = height;
     platforms.push(new Sprite(div));
 }
