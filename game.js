@@ -55,3 +55,17 @@ function createPlatform(x, y, width, height) {
     document.querySelector("#game").appendChild(div);
     platforms.push(new Sprite(div));
 }
+
+(function () {
+    var div = document.createElement("div");
+    div.innerHTML = "0, 0";
+    document.body.appendChild(div);
+    div = document.createElement("div");
+    div.innerHTML = "window.innerWidth = " + window.innerWidth;
+    div.style.float = right;
+    document.body.appendChild(div);
+    div = document.createElement("div");
+    div.innerHTML = "window.innerHeight = " + window.innerHeight;
+    div.style.marginTop = window.innerHeight - 12 + "px";
+    document.body.appendChild(div);
+})();
