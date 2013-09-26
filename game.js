@@ -57,15 +57,18 @@ function createPlatform(x, y, width, height) {
 }
 
 (function () {
-    var div = document.createElement("div");
-    div.innerHTML = "0, 0";
-    document.body.appendChild(div);
-    div = document.createElement("div");
-    div.innerHTML = "window.innerWidth = " + window.innerWidth;
-    div.style.float = right;
-    document.body.appendChild(div);
-    div = document.createElement("div");
-    div.innerHTML = "window.innerHeight = " + window.innerHeight;
-    div.style.marginTop = window.innerHeight - 12 + "px";
-    document.body.appendChild(div);
+    var game = document.querySelector("#game");
+    function makeDiv(x, y, text) {
+    
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        div.style.position = "absolute";
+        div.style.left = x + "px";
+        div.style.top = y + "px";
+        div.style.font = "11px sans-serif";
+        game.appendChild(div);
+    }
+    makeDiv(5, 5, "0, 0");
+    makeDiv(window.innerWidth - 140, 5, "window.innerWidth = " + window.innerWidth);
+    makeDiv(5, window.innerHeight - 25, "window.innerHeight = " + window.innerHeight);
 })();
