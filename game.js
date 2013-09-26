@@ -50,8 +50,8 @@ function createPlatform(x, y, width, height) {
     div.className = "platform";
     div.style.left = x + "px";
     div.style.top = y + "px";
-    div.style.width = width + "px";
-    div.style.height = height + "px";
+    div.style.width = (width || 100) + "px";
+    div.style.height = (height || 10) + "px";
     document.body.appendChild(div);
     platforms.push(new Sprite(div));
 }
