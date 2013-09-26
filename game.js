@@ -6,6 +6,15 @@ window.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;  
 });
 
+var platforms = [];
+function Platform(x, y, width, height) {
+    var div = document.createElement("div");
+    div.className = "platform";
+    document.body.appendChild(div);
+    this = new Sprite(div);
+    platforms.push(this);
+}
+
 function Sprite(element) {
     Object.defineProperties(this, {
         top : {
