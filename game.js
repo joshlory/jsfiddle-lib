@@ -56,7 +56,7 @@ function createPlatform(x, y, width, height) {
     platforms.push(new Sprite(div));
 }
 
-(function () {
+window.addEventListener("load", function () {
     function makeDiv(x, y, text) {
     
         var div = document.createElement("div");
@@ -70,4 +70,4 @@ function createPlatform(x, y, width, height) {
     makeDiv(5, 5, "0, 0");
     makeDiv(window.innerWidth - 140, 5, "window.innerWidth = " + window.innerWidth);
     makeDiv(5, window.innerHeight - 25, "window.innerHeight = " + window.innerHeight);
-})();
+});
