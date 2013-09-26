@@ -55,3 +55,20 @@ function createPlatform(x, y, width, height) {
     document.body.appendChild(div);
     platforms.push(new Sprite(div));
 }
+
+function checkPlatforms() {
+    for (var i = 0; i < platforms.length; i++) {
+        if (velocity > 0 && !(
+            player.right < platforms[i].left ||
+            player.left > platforms[i].right ||
+            player.bottom < platforms[i].top ||
+            player.bottom > platforms[i].bottom
+        )) {
+            //console.log(platforms[i].right);
+            player.bottom = platforms[i].top;
+            velocity = 0;
+            return true;
+        }
+    }
+    return false;
+}
